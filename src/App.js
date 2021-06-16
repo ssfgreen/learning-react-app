@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import logo from './assets/logo.svg';
+import BannerImage from './components/BannerImage/BannerImage'
+import WritingCard from './components/WritingCard/WritingCard'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="left-sidebar">
+        <BannerImage title="Illustration / Animation" image={logo}></BannerImage>
+        <BannerImage title="UX / Product Design" image={logo}></BannerImage>
+      </div>
+      <div className="right-sidebar">
+        <WritingCard title="visual-verbal hybriditiy" image={logo}></WritingCard>
+        <WritingCard title="a narrative archicture" image={logo}></WritingCard>
+      </div>
     </div>
   );
 }
