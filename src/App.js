@@ -1,20 +1,21 @@
-import logo from './assets/logo.svg';
-import BannerImage from './components/BannerImage/BannerImage'
-import WritingCard from './components/WritingCard/WritingCard'
-import './App.css';
+import HomePage from './pages/HomePage/HomePage'
+import AboutPage from './pages/AboutPage/AboutPage'
+import ArticlePage from './pages/ArticlePage/ArticlePage'
+// import DesignPage from './components/DesignPage/DesignPage'
+import WritingPage from './pages/WritingPage/WritingPage'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <div className="left-sidebar">
-        <BannerImage title="Illustration / Animation" image={logo}></BannerImage>
-        <BannerImage title="UX / Product Design" image={logo}></BannerImage>
-      </div>
-      <div className="right-sidebar">
-        <WritingCard title="visual-verbal hybriditiy" image={logo}></WritingCard>
-        <WritingCard title="a narrative archicture" image={logo}></WritingCard>
-      </div>
-    </div>
+    <Router>
+        <Switch>
+            <Route exact path='/' component={HomePage} />
+            <Route exact path='/about' component={AboutPage} />
+            {/* <Route path='/design' component={DesignPage} /> */}
+            <Route exact path='/writing' component={WritingPage} />
+            <Route path='/writing/:articleId' component={ArticlePage} /> 
+        </Switch>
+    </Router>
   );
 }
 
